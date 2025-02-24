@@ -371,3 +371,23 @@ if multi_template_modeling:
 
         mult_loop_model(alignment_file, template_tuple, target_seq_code, start_index, end_index, start_loop_index,
                         end_loop_index, include_ligand, num_cpus)
+
+# *** Step 5: Perform molecular docking with AutodockFR *** #
+import subprocess
+
+# Change the working directory to the autodockfr folder
+os.chdir("autodockfr")
+
+# Execute the AutodockFR scripts sequentially
+subprocess.run(["python", "00-summary_dope.py"])
+subprocess.run(["python", "01-foldx_repair.py"])
+subprocess.run(["python", "02-prepare_ligand_parallel.py"])
+subprocess.run(["python", "03-reorganize_directory.py"])
+subprocess.run(["python", "04-generate_affinity_map.py"])
+subprocess.run(["python", "05-autodockfr.py"])
+subprocess.run(["python", "06-summary_docking_results.py"])
+subprocess.run(["python", "07-select_top_conformations.py"])
+subprocess.run(["python", "08-convert_output_mol_mol2.py"])
+
+# Change the working directory back to the original directory
+os.chdir("..")
