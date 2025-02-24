@@ -1,4 +1,4 @@
-# MODELLER - Generate Multiple Homology Models for Ligand-guided Homology Modeling
+# Ligand-guided Homology Modeling using MODELLER and AutodockFR
 
 This script automates the process of generating homology models using MODELLER. It supports both single-template and multi-template modeling, with options for loop refinement and ligand inclusion.
 
