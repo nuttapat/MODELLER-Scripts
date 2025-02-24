@@ -36,3 +36,14 @@ This script automates the process of generating homology models using MODELLER. 
 3. **Run the script:**
    ```bash
    python execute_modeller.py
+
+## Output
+The script will generate the following output files:
+   - Homology models: PDB files for the generated models.
+   - Summary files: CSV files containing model evaluation scores.
+   - Pickle files: Pickle files containing model objects and other data.
+
+## Additional Notes
+   - The script assumes that MODELLER and AutodockFR are installed and configured correctly.
+   - The script uses the core_func.py file in the script_main subfolder for core functions.
+   - The script can be further customized by modifying the core_func.py file.
